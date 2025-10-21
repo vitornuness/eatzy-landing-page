@@ -1,6 +1,7 @@
 <script setup>
 import Header from './components/Header.vue';
 import Hero from './components/Hero.vue';
+import About from './components/About.vue';
 </script>
 
 <template>
@@ -8,11 +9,14 @@ import Hero from './components/Hero.vue';
 
   <main>
     <Hero />
+    <About />
   </main>
 </template>
 
 <style scoped>
 main {
-  display: block;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 </style>
