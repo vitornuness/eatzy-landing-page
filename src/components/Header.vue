@@ -24,8 +24,6 @@ import LinkButtonEatzy from './LinkButtonEatzy.vue';
                     <li class="nav-item">
                         <a href="#descobrirRestaurantes" class="nav-link">
                             <span class="highlight">DESCOBRIR RESTAURANTES</span>
-                        <a href="#about" class="nav-link">
-                            SOBRE O EATZY
                         </a>
                     </li>
                     <li class="nav-item">
