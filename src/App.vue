@@ -2,6 +2,8 @@
 import Header from './components/Header.vue';
 import Hero from './components/Hero.vue';
 import Footer from './components/Footer.vue'
+import About from './components/About.vue';
+import DescobrirRestaurantes from './components/DescobrirRestaurantes.vue';
 </script>
 
 <template>
@@ -9,6 +11,8 @@ import Footer from './components/Footer.vue'
 
   <main>
     <Hero />
+    <About />
+    <DescobrirRestaurantes />
   </main>
 
   <Footer />
@@ -16,6 +20,8 @@ import Footer from './components/Footer.vue'
 
 <style scoped>
 main {
-  display: block;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 </style>

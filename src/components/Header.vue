@@ -1,4 +1,7 @@
-<script setup></script>
+<script setup>
+import LinkButtonEatzy from './LinkButtonEatzy.vue';
+
+</script>
 
 <template>
     <header>
@@ -14,13 +17,15 @@
             <nav>
                 <ul>
                     <li class="nav-item">
-                        <a href="#" class="nav-link">
+                        <a href="#about" class="nav-link">
                             <span class="highlight">SOBRE O EATZY</span>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="#" class="nav-link">
+                        <a href="#descobrirRestaurantes" class="nav-link">
                             <span class="highlight">DESCOBRIR RESTAURANTES</span>
+                        <a href="#about" class="nav-link">
+                            SOBRE O EATZY
                         </a>
                     </li>
                     <li class="nav-item">
@@ -29,9 +34,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="https://eatzy-nine.vercel.app" class="nav-button">
-                            IR PARA O EATZY
-                        </a>
+                        <LinkButtonEatzy />
                     </li>
                 </ul>
             </nav>
@@ -41,11 +44,11 @@
 
 <style scoped>
 header {
-    position: fixed;
+    position: absolute;
     top: 0;
     right: 0;
     width: 100%;
-    z-index: 10;
+    z-index: 9999;
 }
 
 .header-container {
@@ -99,13 +102,5 @@ a:hover {
 
 .nav-link:hover > .highlight {
     color: red;
-}
-
-.nav-button, .nav-button:hover {
-    color: white;
-    background-color: red;
-    padding: 8px;
-    border-radius: 12px;
-    font-size: 14px;
 }
 </style>
