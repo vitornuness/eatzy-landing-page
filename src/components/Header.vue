@@ -5,9 +5,9 @@
         <div class="header-container">
             <a href="#" class="header-brand">
                 <img
-                    src="../assets/EATZY!.svg"
+                    src="../assets/logo-eatzy.png"
                     alt="EATZY!"
-                    height="160px"
+                    height="60px"
                 >
             </a>
 
@@ -15,17 +15,17 @@
                 <ul>
                     <li class="nav-item">
                         <a href="#" class="nav-link">
-                            SOBRE O EATZY
+                            <span class="highlight">SOBRE O EATZY</span>
                         </a>
                     </li>
                     <li class="nav-item">
                         <a href="#" class="nav-link">
-                            DESCOBRIR <span class="highlight">RESTAURANTES</span>
+                            <span class="highlight">DESCOBRIR RESTAURANTES</span>
                         </a>
                     </li>
                     <li class="nav-item">
                         <a href="#" class="nav-link">
-                            PARA <span class="highlight">RESTAURANTES</span>
+                            <span class="highlight">PARA RESTAURANTES</span>
                         </a>
                     </li>
                     <li>
@@ -45,11 +45,12 @@ header {
     top: 0;
     right: 0;
     width: 100%;
+    z-index: 10;
 }
 
 .header-container {
     margin: 12px;
-    padding-block: 40px;
+    padding-block: 25px;
     padding-inline: 24px;
     background-color: #ffffff80;
     border-radius: 20px;
@@ -62,6 +63,9 @@ header {
 
 .header-brand {
     position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 nav {
@@ -70,14 +74,14 @@ nav {
 
 ul {
     display: flex;
-    gap: 80px;
+    gap: 20px;
     justify-content: end;
     list-style-type: none;
     width: 100%;
 }
 
 a, .nav-link > .highlight {
-    font-size: 24px;
+    font-size: 18px;
     font-weight: bold;
 }
 
@@ -100,7 +104,8 @@ a:hover {
 .nav-button, .nav-button:hover {
     color: white;
     background-color: red;
-    padding: 12px;
+    padding: 8px;
     border-radius: 12px;
+    font-size: 14px;
 }
 </style>

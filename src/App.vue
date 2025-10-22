@@ -1,6 +1,7 @@
 <script setup>
 import Header from './components/Header.vue';
 import Hero from './components/Hero.vue';
+import Footer from './components/Footer.vue'
 </script>
 
 <template>
@@ -9,6 +10,8 @@ import Hero from './components/Hero.vue';
   <main>
     <Hero />
   </main>
+
+  <Footer />
 </template>
 
 <style scoped>
