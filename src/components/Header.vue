@@ -8,9 +8,9 @@ import LinkButtonEatzy from './LinkButtonEatzy.vue';
         <div class="header-container">
             <a href="#" class="header-brand">
                 <img
-                    src="../assets/EATZY!.svg"
+                    src="../assets/logo-eatzy.png"
                     alt="EATZY!"
-                    height="160px"
+                    height="60px"
                 >
             </a>
 
@@ -18,17 +18,19 @@ import LinkButtonEatzy from './LinkButtonEatzy.vue';
                 <ul>
                     <li class="nav-item">
                         <a href="#about" class="nav-link">
-                            SOBRE O EATZY
+                            <span class="highlight">SOBRE O EATZY</span>
                         </a>
                     </li>
                     <li class="nav-item">
                         <a href="#descobrirRestaurantes" class="nav-link">
-                            DESCOBRIR <span class="highlight">RESTAURANTES</span>
+                            <span class="highlight">DESCOBRIR RESTAURANTES</span>
+                        <a href="#about" class="nav-link">
+                            SOBRE O EATZY
                         </a>
                     </li>
                     <li class="nav-item">
                         <a href="#" class="nav-link">
-                            PARA <span class="highlight">RESTAURANTES</span>
+                            <span class="highlight">PARA RESTAURANTES</span>
                         </a>
                     </li>
                     <li>
@@ -51,7 +53,7 @@ header {
 
 .header-container {
     margin: 12px;
-    padding-block: 40px;
+    padding-block: 25px;
     padding-inline: 24px;
     background-color: #ffffff80;
     border-radius: 20px;
@@ -64,6 +66,9 @@ header {
 
 .header-brand {
     position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 nav {
@@ -72,14 +77,14 @@ nav {
 
 ul {
     display: flex;
-    gap: 80px;
+    gap: 20px;
     justify-content: end;
     list-style-type: none;
     width: 100%;
 }
 
 a, .nav-link > .highlight {
-    font-size: 24px;
+    font-size: 18px;
     font-weight: bold;
 }
 

@@ -1,6 +1,7 @@
 <script setup>
 import Header from './components/Header.vue';
 import Hero from './components/Hero.vue';
+import Footer from './components/Footer.vue'
 import About from './components/About.vue';
 import DescobrirRestaurantes from './components/DescobrirRestaurantes.vue';
 </script>
@@ -13,6 +14,8 @@ import DescobrirRestaurantes from './components/DescobrirRestaurantes.vue';
     <About />
     <DescobrirRestaurantes />
   </main>
+
+  <Footer />
 </template>
 
 <style scoped>
