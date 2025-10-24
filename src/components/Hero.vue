@@ -2,19 +2,19 @@
 import { ref, onMounted, onUnmounted } from 'vue'
 
 import hero1 from '../assets/Hero.png'
-import hero2 from '../assets/hero2.png'
+import hero2 from '../assets/Hero.png'
 
 const images = [hero1, hero2]
 
 const currentIndex = ref(0)
 let intervalId = null
 
-/* Troca automática
+// Troca automática //
 onMounted(() => {
   intervalId = setInterval(() => {
     currentIndex.value = (currentIndex.value + 1) % images.length
   }, 7000)
-})*/
+})
 
 onUnmounted(() => {
   clearInterval(intervalId)
@@ -64,8 +64,6 @@ function prevSlide() {
 }
 
 .full-screen {
-  /*width: 100vw;
-  height: 100vh;*/
   z-index: 1;
 }
 
@@ -84,7 +82,7 @@ button {
   transform: translateY(-50%);
   background-color: rgba(255, 255, 255, 0.5);
   border: none;
-  font-size: 2.5rem;
+  font-size: 1.5rem;
   cursor: pointer;
   border-radius: 50%;
   transition: background 0.3s;
@@ -92,6 +90,12 @@ button {
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 0;
+}
+
+button svg {
+  width: 60%;
+  height: 60%;
 }
 
 button:hover {
@@ -106,4 +110,50 @@ button:hover {
   right: 20px;
 }
 
+@media (max-width: 600px) {
+  .container {
+    margin: 0;
+    border-radius: 0;
+  }
+
+  button {
+    height: 30px;
+    width: 30px;
+    background-color: rgba(255, 255, 255, 0.3);
+  }
+  
+  button svg {
+    width: 50%;
+    height: 50%;
+  }
+
+  .prev {
+    left: 10px;
+  }
+
+  .next {
+    right: 10px;
+  }
+}
+
+@media (min-width: 601px) and (max-width: 992px) {
+  .container {
+    margin: 6px;
+    border-radius: 15px;
+  }
+  button {
+    height: 35px;
+    width: 35px;
+  }
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
 </style>
