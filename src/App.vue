@@ -4,6 +4,7 @@ import Hero from './components/Hero.vue';
 import Footer from './components/Footer.vue'
 import About from './components/About.vue';
 import DescobrirRestaurantes from './components/DescobrirRestaurantes.vue';
+import ParaRestaurantes from './components/ParaRestaurantes.vue';
 </script>
 
 <template>
@@ -13,6 +14,7 @@ import DescobrirRestaurantes from './components/DescobrirRestaurantes.vue';
     <Hero />
     <About />
     <DescobrirRestaurantes />
+    <ParaRestaurantes />
   </main>
 
   <Footer />

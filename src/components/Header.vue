@@ -1,6 +1,12 @@
 <script setup>
+import { ref } from 'vue';
 import LinkButtonEatzy from './LinkButtonEatzy.vue';
 
+const isMenuOpen = ref(false);
+
+function toggleMenu() {
+    isMenuOpen.value = !isMenuOpen.value;
+}
 </script>
 
 <template>
@@ -10,28 +16,34 @@ import LinkButtonEatzy from './LinkButtonEatzy.vue';
                 <img
                     src="../assets/logo-eatzy.png"
                     alt="EATZY!"
-                    height="60px"
+                    height="40"
                 >
             </a>
 
-            <nav>
+            <button class="menu-toggle" @click="toggleMenu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+
+            <nav :class="{ 'open': isMenuOpen }">
                 <ul>
-                    <li class="nav-item">
+                    <li class="nav-item" @click="isMenuOpen = false">
                         <a href="#about" class="nav-link">
                             <span class="highlight">SOBRE O EATZY</span>
                         </a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item" @click="isMenuOpen = false">
                         <a href="#descobrirRestaurantes" class="nav-link">
                             <span class="highlight">DESCOBRIR RESTAURANTES</span>
                         </a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item" @click="isMenuOpen = false">
                         <a href="#" class="nav-link">
                             <span class="highlight">PARA RESTAURANTES</span>
                         </a>
                     </li>
-                    <li>
+                    <li @click="isMenuOpen = false">
                         <LinkButtonEatzy />
                     </li>
                 </ul>
@@ -42,7 +54,7 @@ import LinkButtonEatzy from './LinkButtonEatzy.vue';
 
 <style scoped>
 header {
-    position: absolute;
+    position: fixed;
     top: 0;
     right: 0;
     width: 100%;
@@ -50,40 +62,57 @@ header {
 }
 
 .header-container {
-    margin: 12px;
-    padding-block: 25px;
-    padding-inline: 24px;
+    margin: 1rem;
+    padding: 1rem 1.5rem;
     background-color: #ffffff80;
-    border-radius: 20px;
-    box-shadow: #00000033 2px 2px 10px;
-
+    border-radius: 1.25rem;
+    box-shadow: #00000033 2px 2px 10px;    
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
 
-.header-brand {
-    position: absolute;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.header-brand img {
+    height: 3rem;
+    width: auto;
+}
+
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    z-index: 10000;
+}
+
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    background-color: black;
+    transition: all 0.3s ease-in-out;
 }
 
 nav {
-    width: 100%;
+    width: auto;
 }
 
 ul {
     display: flex;
-    gap: 20px;
+    gap: 1.25rem;
     justify-content: end;
     list-style-type: none;
-    width: 100%;
+    padding: 0;
+    margin: 0;
 }
 
 a, .nav-link > .highlight {
-    font-size: 18px;
+    font-size: 1rem;
     font-weight: bold;
+    white-space: nowrap;
+    text-decoration: none;
 }
 
 a:hover {
@@ -92,6 +121,7 @@ a:hover {
 
 .nav-link {
     color: black;
+    padding: 0.5rem;
 }
 
 .nav-link:active {
@@ -100,5 +130,53 @@ a:hover {
 
 .nav-link:hover > .highlight {
     color: red;
+}
+
+@media (max-width: 992px) {
+    .menu-toggle {
+        display: block;
+    }
+
+    nav {
+        display: none;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background-color: rgba(255, 255, 255, 0.95);
+        padding-top: 5rem;
+        transition: transform 0.3s ease-in-out;
+        transform: translateX(-100%);
+    }
+
+    nav.open {
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        transform: translateX(0);
+    }
+
+    ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+        padding-top: 3rem;
+        width: 100%;
+    }
+
+    .nav-item {
+        margin: 0.5rem 0;
+    }
+
+    a, .nav-link > .highlight {
+        font-size: 1.5rem;
+        color: black;
+    }
+
+    .header-container {
+        margin: 0.5rem;
+        padding: 0.75rem 1rem;
+    }
 }
 </style>
